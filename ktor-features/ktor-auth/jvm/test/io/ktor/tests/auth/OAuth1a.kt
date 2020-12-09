@@ -7,14 +7,12 @@ package io.ktor.tests.auth
 import io.ktor.application.*
 import io.ktor.auth.*
 import io.ktor.client.*
-import io.ktor.client.engine.*
 import io.ktor.http.*
 import io.ktor.http.auth.*
 import io.ktor.request.*
 import io.ktor.response.*
 import io.ktor.routing.*
 import io.ktor.server.testing.*
-import io.ktor.server.testing.client.*
 import io.ktor.util.*
 import kotlinx.coroutines.*
 import java.time.*

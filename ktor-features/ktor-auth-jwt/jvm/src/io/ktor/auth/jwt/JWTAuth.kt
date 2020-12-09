@@ -13,11 +13,14 @@ import com.auth0.jwt.interfaces.*
 import com.auth0.jwt.interfaces.JWTVerifier
 import io.ktor.application.*
 import io.ktor.auth.*
+import io.ktor.features.*
 import io.ktor.http.auth.*
+import io.ktor.http.parsing.*
 import io.ktor.request.*
 import io.ktor.response.*
 import io.ktor.util.pipeline.*
 import org.slf4j.*
+import java.lang.Exception
 import java.security.interfaces.*
 import java.util.*
 
@@ -286,7 +289,7 @@ private fun HttpAuthHeader.getBlob(schemes: JWTAuthSchemes) = when {
 
 private fun ApplicationRequest.parseAuthorizationHeaderOrNull() = try {
     parseAuthorizationHeader()
-} catch (ex: IllegalArgumentException) {
+} catch (ex: Exception) {
     JWTLogger.trace("Illegal HTTP auth header", ex)
     null
 }
